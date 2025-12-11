@@ -40,6 +40,6 @@ jobs:
             creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Run customer loyalty agent initializer
+        working-directory: src/app/agents
         run: |
-          cd app/
-          python app/agents/customerLoyaltyAgent_initializer.py
+          python customerLoyaltyAgent_initializer.py
