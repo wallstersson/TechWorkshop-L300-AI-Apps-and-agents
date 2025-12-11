@@ -17,6 +17,9 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Add this to your Dockerfile (replace as needed for your base image)
+ARG ENV
+RUN echo "$ENV" > .env
 
 # Copy the rest of the code
 COPY . .
